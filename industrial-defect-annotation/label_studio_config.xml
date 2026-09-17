@@ -1,0 +1,21 @@
+<View>
+  <!-- 图像分类：5 类工业元件缺陷 -->
+  <Choices name="defect_class" toName="image" choice="single">
+    <Choice value="OK"/>
+    <Choice value="缺件"/>
+    <Choice value="偏移"/>
+    <Choice value="异物"/>
+    <Choice value="划痕"/>
+  </Choices>
+
+  <!-- 目标检测：框选元件 / 焊点 -->
+  <RectangleLabels name="bbox" toName="image">
+    <Label value="元件"/>
+    <Label value="焊点"/>
+  </RectangleLabels>
+
+  <!-- OCR：识别元件丝印编号 -->
+  <TextArea name="ocr_text" toName="image" placeholder="识别到的文字，如 U1、R5"/>
+
+  <Image name="image" value="$image"/>
+</View>
